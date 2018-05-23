@@ -24,6 +24,7 @@ public class ChatEntity {
     public ChatEntity(ChatForm chatForm){
         setName(chatForm.getName());
         setText(chatForm.getText());
+        setTime(chatForm.getTime());
     }
 
     public int getId() {

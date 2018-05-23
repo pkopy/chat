@@ -3,6 +3,7 @@ package pl.pkopy.chat.models.forms;
 public class ChatForm {
     private String name;
     private String text;
+    private String time;
 
     public ChatForm(){
 
@@ -22,5 +23,13 @@ public class ChatForm {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
