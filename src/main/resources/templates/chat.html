@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="../static/style.css" />-->
+    <title>Bootcamp chat</title>
+</head>
+<body>
+<div style="text-align: center">
+
+
+
+    <form method="post" action="/" th:object = "${chatForm}">
+        <input type="text" th:field="*{name}" placeholder="Podaj imię" >
+        <input type="submit" value="Wyślij">
+    </form>
+
+    <h1 th:text="${allChat}"></h1>
+
+
+
+</div>
+
+
+</body>
+</html>
