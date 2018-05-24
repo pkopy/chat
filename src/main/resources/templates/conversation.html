@@ -5,6 +5,65 @@
     <meta charset="UTF-8">
     <!--<link rel="stylesheet" type="text/css" media="screen" href="../static/style.css" />-->
     <title>Bootcamp chat</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+        .container{
+            display: flex;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .name {
+            background-color: #5affc3;
+            width: auto;
+            border-radius: 5px;
+            font-weight: bold;
+            display: flex;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            max-height: 40px;
+        }.friend {
+            background-color: #ffcae5;
+            width: auto;
+            border-radius: 5px;
+            font-weight: bold;
+            display: flex;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            max-height: 40px;
+            
+        }
+        .text{
+            width: 350px;
+            border: 1px solid #e2d5c2;
+            border-radius: 5px;
+            margin: 5px;
+            display: flex;
+            padding: 10px;
+            position: relative;
+        }
+        .time {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 10px;
+        }
+        textarea {
+            border: none;
+            max-width: 350px;
+            resize: none;
+        }
+    </style>
 </head>
 <body>
 <div style="text-align: center">
@@ -20,10 +79,16 @@
         <input type="submit" value="Wyślij">
     </form>
 
-    <div th:each="item : ${allChats}">
-        <span th:text="${item.getName()}"></span>
-        <span th:text="${item.getText()}"></span>
-        <span th:text="${item.getTime()}"></span>
+    <div class="container" th:each="item : ${allChats}">
+        <div class="name" th:if="${name} == ${item.getName()}"><span th:text="${item.getName()}"></span></div>
+
+        <div class="text" >
+            <textarea cols="100" th:text="${item.getText()}"></textarea>
+
+            <div class="time" th:text="${item.getTime()}"></div>
+
+        </div>
+            <div class="friend" th:if="${name} != ${item.getName()}"><span th:text="${item.getName()}"></span></div>
         <br>
     </div>
 
