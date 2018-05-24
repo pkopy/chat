@@ -31,7 +31,19 @@
             margin: 5px;
             padding: 10px;
             max-height: 40px;
-        }.friend {
+            position: relative;
+        }
+        .name::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 100%;
+            margin-left: -12px;
+            border-width: 11px;
+            border-style: solid;
+            border-color: #5affc3 transparent transparent transparent;
+        }
+        .friend {
             background-color: #ffcae5;
             width: auto;
             border-radius: 5px;
@@ -41,7 +53,18 @@
             margin: 5px;
             padding: 10px;
             max-height: 40px;
-            
+            position: relative;
+
+        }
+        .friend::before {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 0;
+            margin-left: -10px;
+            border-width: 11px;
+            border-style: solid;
+            border-color: transparent transparent #ffcae5 transparent;
         }
         .text{
             width: 350px;
