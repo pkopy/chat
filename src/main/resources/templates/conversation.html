@@ -107,7 +107,7 @@
         <div class="name" th:if="${name} == ${item.getName()}"><span th:text="${item.getName()}"></span></div>
 
         <div class="text" >
-            <textarea cols="100" th:text="${item.getText()}"></textarea>
+            <textarea cols="100" readonly th:text="${item.getText()}"></textarea>
 
             <div class="time" th:text="${item.getTime()}"></div>
 
